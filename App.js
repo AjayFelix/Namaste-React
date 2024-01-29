@@ -1,28 +1,62 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Title = () => {
+/**
+ * Header
+ * - Logo
+ * - Nav Items
+ * Body
+ * - Search
+ * - Restro container
+ * - Restro card
+ * Footer
+ *  - Copyright
+ *  - Address
+ *  - Contact
+ */
+
+const Header = () => {
   return (
-    <div>
-      <h1>Namaste React</h1>
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search-container">
+        <div className="search-bar">
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+      <div className="restro-container">
+        <div className="restro-card"></div>
+      </div>
     </div>
   );
 };
 
-// react components
-// class based components - old way
-// function based components - present way
-
-//component compositions
-const Heading = () => {
+const AppLayout = () => {
   return (
-    <div>
-      <Title />
-      <h1 className="heading">Hi ajay felix wecome to react</h1>
+    <div className="App">
+      <Header />
+      <Body />
     </div>
   );
 };
-
-//1st props is for tag type , 2nd for atribute id or name 2rd props is for component
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Heading />);
+root.render(<AppLayout />);
